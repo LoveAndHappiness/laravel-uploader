@@ -9,7 +9,7 @@ class UserTableSeeder extends Seeder {
 
     public function run()
     {
-        TestDummy::times(4)->create('App\User');
+        TestDummy::times(1)->create('App\User');
     }
 
 }

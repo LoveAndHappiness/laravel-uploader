@@ -1,10 +1,15 @@
 <?php
 
 $factory('App\User', [
-	'name'     => $faker->name,
-	'email'    => $faker->email,
-	'password' => $faker->word,
-	'role'     => 'staff'
+	'name'     => 'Georg Geladaris',
+	'email'    => 'george@expimo.de',
+	'password' => hash_password('000400', PASSWORD_DEFAULT),
+]);
+
+$factory('App\User', [
+	'name'     => 'Zoi Bakali',
+	'email'    => 'zoi@expimo.de',
+	'password' => hash_password('000400', PASSWORD_DEFAULT),
 ]);
 
 $factory('App\Client', [
@@ -35,4 +40,40 @@ $factory('App\File', [
 	'originalFilename' => $faker->word,
 	'filename'         => $faker->file(public_path('files/uploads/tmp'), public_path('files/uploads'), false),
 	'filepath'         => 'files/uploads/'
+]);
+
+$factory('App\Role', [
+	'name'         => 'admin',
+	'display_name' => 'Admin',
+	'description'  => 'Admin role represents the user with access to everything'
+]);
+
+$factory('App\Role', [
+	'name'         => 'owner',
+	'display_name' => 'Owner',
+	'description'  => 'Owner has nearly as many rights as an admin.'
+]);
+
+$factory('App\Role', [
+	'name'         => 'staff_auditor',
+	'display_name' => 'Staff Auditor',
+	'description'  => 'Audits incomming files, corrects them and writes the audit report'
+]);
+
+$factory('App\Role', [
+	'name'         => 'staff_supervisor',
+	'display_name' => 'Staff Supervisor',
+	'description'  => 'Keeps auditors in check to reduce their mistakes and increase general customer satisfaction.'
+]);
+
+$factory('App\Permission', [
+	'name'         => 'view_orders',
+	'display_name' => 'View Orders',
+	'description'  => 'Allows you to view all orders and get access to the files and clients associated with it.'
+]);
+
+$factory('App\Permission', [
+	'name'         => 'modify_orders',
+	'display_name' => 'Modify Index',
+	'description'  => 'Allows you to edit and delete orders and audit reports associated with them.'
 ]);
