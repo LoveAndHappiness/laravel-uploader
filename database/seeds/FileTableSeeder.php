@@ -9,7 +9,7 @@ class FileTableSeeder extends Seeder {
 
     public function run()
     {
-        TestDummy::times(10)->create('App\File');
+        TestDummy::times(6)->create('App\File');
     }
 
 }

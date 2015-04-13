@@ -9,7 +9,7 @@ class ClientTableSeeder extends Seeder {
 
     public function run()
     {
-        TestDummy::times(7)->create('App\Client');
+        TestDummy::times(6)->create('App\Client');
     }
 
 }

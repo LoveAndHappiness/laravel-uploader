@@ -3,14 +3,20 @@
 $factory('App\User', [
 	'name'     => 'Georg Geladaris',
 	'email'    => 'george@expimo.de',
-	'password' => hash_password('000400', PASSWORD_DEFAULT),
+	'password' => password_hash('000400', PASSWORD_DEFAULT),
 ]);
 
 $factory('App\User', [
 	'name'     => 'Zoi Bakali',
 	'email'    => 'zoi@expimo.de',
-	'password' => hash_password('000400', PASSWORD_DEFAULT),
+	'password' => password_hash('000400', PASSWORD_DEFAULT),
 ]);
+
+// $factory('App\User', [
+// 	'name'     => $faker->name,
+// 	'email'    => $faker->email,
+// 	'password' => password_hash('000400', PASSWORD_DEFAULT),
+// ]);
 
 $factory('App\Client', [
 	'salutation' => $faker->title,
@@ -21,7 +27,7 @@ $factory('App\Client', [
 ]);
 
 $factory('App\Order', [
-	'user_id'        => 'factory:App\User',
+	'user_id'        => 1,
 	'client_id'      => 'factory:App\Client',
 	'householdCount' => rand(1, 3),
 	'city' 			 => $faker->city,

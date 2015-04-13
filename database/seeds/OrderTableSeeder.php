@@ -9,7 +9,7 @@ class OrderTableSeeder extends Seeder {
 
     public function run()
     {
-        TestDummy::times(7)->create('App\Order');
+        TestDummy::times(6)->create('App\Order');
     }
 
 }
