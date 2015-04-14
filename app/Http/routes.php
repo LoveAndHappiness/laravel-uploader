@@ -14,6 +14,15 @@
 // Route::get('/', 'HomeController@index');
 
 Route::get('/', 'OrdersController@create');
+Route::get('login2', function(){
+	return view('auth.login2');
+});
+Route::get('register2', function(){
+	return view('auth.register2');
+});
+Route::get('password2', function(){
+	return view('auth.password2');
+});
 
 Route::resource('orders', 'OrdersController');
 
