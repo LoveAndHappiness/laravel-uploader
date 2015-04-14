@@ -19,8 +19,7 @@
         
       
         <!-- Javascript Libraries -->
-        <script src="js/jquery-2.1.1.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+        <script src="{{ asset('js/app.js') }}"></script>
         
         <script src="vendors/waves/waves.min.js"></script>
         

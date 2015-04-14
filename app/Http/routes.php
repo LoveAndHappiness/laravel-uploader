@@ -51,7 +51,7 @@ Route::post('password', ['as' => 'postPassword', 'uses' => 'Auth\AuthController@
 // Route::get('/login', 'Auth\AuthController@getLogin');
 // Route::get('/register', 'Auth\AuthController@getRegister');
 
-Route::controllers([
-	'auth'     => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
-]);
+// Route::controllers([
+// 	'auth'     => 'Auth\AuthController',
+// 	'password' => 'Auth\PasswordController',
+// ]);

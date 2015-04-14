@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder {
 		$this->call('ClientTableSeeder');
 		$this->call('OrderTableSeeder');
 		$this->call('FileTableSeeder');
+		$this->call('RoleTableSeeder');
+		$this->call('PermissionTableSeeder');
 	}
 
 }

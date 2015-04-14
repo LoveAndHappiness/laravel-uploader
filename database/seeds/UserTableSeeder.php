@@ -9,19 +9,19 @@ class UserTableSeeder extends Seeder {
 
     public function run()
     {
-        TestDummy::times(1)->create('App\User');
+        // TestDummy::times(1)->create('App\User');
 
-        // App\User::create([
-        // 	'name' => 'Georg Geladaris',
-        // 	'email' => 'georg@expimo.de',
-        // 	'password' => password_hash('000400', PASSWORD_DEFAULT)
-        // ]);
+        App\User::create([
+        	'name' => 'Georg Geladaris',
+        	'email' => 'george@expimo.de',
+        	'password' => password_hash('000400', PASSWORD_DEFAULT)
+        ]);
 
-        // App\User::create([
-        // 	'name' => 'Zoitsa Bakali',
-        // 	'email' => 'zoi@expimo.de',
-        // 	'password' => password_hash('000400', PASSWORD_DEFAULT)
-        // ]);
+        App\User::create([
+        	'name' => 'Zoitsa Bakali',
+        	'email' => 'zoi@expimo.de',
+        	'password' => password_hash('000400', PASSWORD_DEFAULT)
+        ]);
     }
 
 }
