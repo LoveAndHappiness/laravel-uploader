@@ -1,50 +1,28 @@
 @extends('blank')
 
 @section('content')
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
-			<div class="panel panel-default">
-				<div class="panel-heading">Reset Password</div>
-				<div class="panel-body">
-					@if (session('status'))
-						<div class="alert alert-success">
-							{{ session('status') }}
-						</div>
-					@endif
+        <!-- Forgot Password -->
+        <div class="lc-block toggled" id="l-forget-password">
 
-					@if (count($errors) > 0)
-						<div class="alert alert-danger">
-							<strong>Whoops!</strong> There were some problems with your input.<br><br>
-							<ul>
-								@foreach ($errors->all() as $error)
-									<li>{{ $error }}</li>
-								@endforeach
-							</ul>
-						</div>
-					@endif
+        <h2 class="m-b-20">Resette dein Passwort</h2>
 
-					<form class="form-horizontal" role="form" method="POST" action="{{ url('/password/email') }}">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
-							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<button type="submit" class="btn btn-primary">
-									Send Password Reset Link
-								</button>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+            @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                    <strong>Whoops!</strong> Es scheint ein Problem bei der Eingabe gegeben zu haben.<br><br>
+                        @foreach ($errors->all() as $error)
+                            <span style="list-style: none;">{{ $error }}</span><br>
+                        @endforeach
+                </div>
+            @endif
+            
+            <div class="input-group m-b-20">
+                <span class="input-group-addon"><i class="md md-email"></i></span>
+                <div class="fg-line">
+                    {!! Form::email('email', null, array('class' => 'form-control', 'placeholder' => 'E-Mail-Adresse')) !!}
+                </div>
+            </div>
+            
+            <a href="" class="btn btn-login btn-danger btn-float"><i class="md md-arrow-forward"></i></a>
+            
+        </div>
 @endsection
