@@ -14,15 +14,15 @@
 // Route::get('/', 'HomeController@index');
 
 Route::get('/', 'OrdersController@create');
-Route::get('login2', function(){
-	return view('auth.login2');
-});
-Route::get('register2', function(){
-	return view('auth.register2');
-});
-Route::get('password2', function(){
-	return view('auth.password2');
-});
+Route::get('step1', ['as' => 'step1', 'uses' => 'OrdersController@create']);
+Route::get('step2', ['as' => 'step2', 'uses' => 'ClientsController@create']);
+Route::get('step3', ['as' => 'step3', 'uses' => 'FilesController@create']);
+Route::get('step4', ['as' => 'step4', 'uses' => 'PaymentController@create']);
+
+
+
+Route::get('dashboard', 'DashboardController@index');
+
 
 Route::resource('orders', 'OrdersController');
 

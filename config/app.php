@@ -39,7 +39,7 @@ return [
 	|
 	*/
 
-	'timezone' => 'UTC',
+	'timezone' => 'CET',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -147,6 +147,7 @@ return [
 		'Illuminate\Html\HtmlServiceProvider',
 		'Laracasts\Flash\FlashServiceProvider',
 		'Zizaco\Entrust\EntrustServiceProvider',
+		'Jenssegers\Date\DateServiceProvider',
 
 	],
 
@@ -198,7 +199,8 @@ return [
 		'Form'      => 'Illuminate\Html\FormFacade',
 		'HTML'      => 'Illuminate\Html\HtmlFacade',
 		'Flash' 	=> 'Laracasts\Flash\Flash',
-		'Entrust' 	=> 'Zizaco\Entrust\EntrustFacade'
+		'Entrust' 	=> 'Zizaco\Entrust\EntrustFacade',
+		'Date' 		=> 'Jenssegers\Date\Date',
 
 	],
 

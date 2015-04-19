@@ -45,4 +45,9 @@ class AuthController extends Controller {
 		$this->middleware('guest', ['except' => 'getLogout']);
 	}
 
+	protected function getFailedLoginMessage()
+	{
+		return 'Ihre Eingaben entsprechen keinem unserer Datensätze.';
+	}
+
 }

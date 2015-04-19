@@ -16830,5 +16830,26 @@ hr.wizard-divider {
   margin-right: -20px;
   margin-left: -20px;
 }
+i.md-label-position {
+  position: absolute;
+  right: 10px;
+  font-size: 23px;
+}
+.dropzone {
+  min-height: 150px;
+  border: 2px dashed #2196F3;
+  background: white;
+  padding: 20px 20px;
+  margin-top: -35px;
+}
+.dropzone h1 {
+  font-weight: 400;
+}
+.dropzone h2 {
+  font-weight: 400;
+}
+.dropzone h3 {
+  font-weight: 400;
+}
 
 /*# sourceMappingURL=app.css.map */

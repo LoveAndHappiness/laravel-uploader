@@ -4,8 +4,21 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use Auth;
+use Flash;
+use Jenssegers\Date\Date;
 
-class FilesController extends Controller {
+
+
+// Models
+use App\Order;
+
+class DashboardController extends Controller {
+
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
 
 	/**
 	 * Display a listing of the resource.
@@ -15,6 +28,16 @@ class FilesController extends Controller {
 	public function index()
 	{
 		//
+		$user = Auth::user();
+		$orders = Order::where('claimed', '0')->latest()->get();
+
+		// Deutsch
+		// return Date::now()->diffForHumans();
+
+
+		Flash::success('Welcome Aboard!');
+
+		return view('pages.dashboard.index', compact('user', 'orders'));
 	}
 
 	/**
@@ -25,8 +48,6 @@ class FilesController extends Controller {
 	public function create()
 	{
 		//
-
-		return view('pages.files.create');
 	}
 
 	/**

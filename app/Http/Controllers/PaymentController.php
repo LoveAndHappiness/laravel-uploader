@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class FilesController extends Controller {
+class PaymentController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -25,8 +25,7 @@ class FilesController extends Controller {
 	public function create()
 	{
 		//
-
-		return view('pages.files.create');
+		return view('pages.payments.create');
 	}
 
 	/**

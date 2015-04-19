@@ -2762,7 +2762,7 @@ if (typeof jQuery === 'undefined') {
       url: null,
       method: "post",
       withCredentials: false,
-      parallelUploads: 2,
+      parallelUploads: 1,
       uploadMultiple: false,
       maxFilesize: 256,
       paramName: "file",
@@ -2783,7 +2783,7 @@ if (typeof jQuery === 'undefined') {
       addRemoveLinks: false,
       previewsContainer: null,
       capture: null,
-      dictDefaultMessage: "Drop files here to upload",
+      dictDefaultMessage: "<h2>Hier klicken, Dateien auswählen & hochladen</h2><br/><h3>(eingescanntes Dokument oder Foto als PDF, JPG oder PNG)</h3>",
       dictFallbackMessage: "Your browser does not support drag'n'drop file uploads.",
       dictFallbackText: "Please use the fallback form below to upload your files like in the olden days.",
       dictFileTooBig: "File is too big ({{filesize}}MiB). Max filesize: {{maxFilesize}}MiB.",
@@ -4372,5 +4372,5 @@ if (typeof jQuery === 'undefined') {
 
 }).call(this);
 
-console.log('Chello World');
+console.log('Chello World Hihi!');
 //# sourceMappingURL=app.js.map
