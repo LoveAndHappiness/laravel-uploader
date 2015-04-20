@@ -24,15 +24,14 @@ return [
 	],
 
 	'ses' => [
-		'key' => '',
+		'key'    => '',
 		'secret' => '',
 		'region' => 'us-east-1',
 	],
 
 	'stripe' => [
-		'model'  => 'App\User',
-		'key' => '',
-		'secret' => '',
+		'model' => 'App\User',
+		'key'   => env('STRIPE_PUBLIC_KEY')
 	],
 
 ];

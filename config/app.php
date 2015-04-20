@@ -148,6 +148,7 @@ return [
 		'Laracasts\Flash\FlashServiceProvider',
 		'Zizaco\Entrust\EntrustServiceProvider',
 		'Jenssegers\Date\DateServiceProvider',
+		'Laravel\Cashier\CashierServiceProvider',
 
 	],
 

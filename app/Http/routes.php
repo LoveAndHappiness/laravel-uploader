@@ -17,8 +17,14 @@ Route::get('/', 'OrdersController@create');
 Route::get('step1', ['as' => 'step1', 'uses' => 'OrdersController@create']);
 Route::get('step2', ['as' => 'step2', 'uses' => 'ClientsController@create']);
 Route::get('step3', ['as' => 'step3', 'uses' => 'FilesController@create']);
-Route::get('step4', ['as' => 'step4', 'uses' => 'PaymentController@create']);
+Route::get('step4', ['as' => 'step4', 'uses' => 'PaymentsController@create']);
 
+Route::post('payments/chargeStripe', ['as' => 'chargeStripe', 'uses' => 'PaymentsController@chargeStripe']);
+Route::post('payments/chargePaypal', ['as' => 'chargePaypal', 'uses' => 'PaymentsController@chargePaypal']);
+Route::post('payments/chargeSofort', ['as' => 'chargeSofort', 'uses' => 'PaymentsController@chargeSofort']);
+
+
+// Route::post('step4', ['as' => 'step4', 'uses' => 'PaymentsController@store']);
 
 
 Route::get('dashboard', 'DashboardController@index');
