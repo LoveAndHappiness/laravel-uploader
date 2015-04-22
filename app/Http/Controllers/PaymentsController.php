@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Session;
 use Redirect;
 use Input;
+use Stripe;
 
 class PaymentsController extends Controller {
 
@@ -31,13 +32,13 @@ class PaymentsController extends Controller {
 		//
 		Session::put('email', 'georg@geladaris.de');
 
-		$email = Session::get('email');
-
+		$email             = Session::get('email');
+		
 		$stripe_public_key = env('STRIPE_PUBLIC_KEY');
-		$data_amount = "2900";
-		$data_name = "Expimo";
-		$data_description = "Für die Prüfung Ihrer Abrechnung";
-		$data_image = "https://i.imgur.com/KShbN85.jpg";
+		$data_amount       = "2900";
+		$data_name         = "Expimo";
+		$data_description  = "Für die Prüfung Ihrer Abrechnung";
+		$data_image        = "https://i.imgur.com/KShbN85.jpg";
 
 
 		return view('pages.payments.create', 
@@ -52,8 +53,12 @@ class PaymentsController extends Controller {
 	 */
 	public function chargeStripe()
 	{
-		//
-		dd(Input::all());
+
+		$stripe = new Stripe;
+		$stripe = Stripe::make('pk_test_mA3Wo4wGNDNEQ5rRHaUKTVOZ');
+		dd($stripe);
+
+
 		return Redirect::route('step1');
 	}
 

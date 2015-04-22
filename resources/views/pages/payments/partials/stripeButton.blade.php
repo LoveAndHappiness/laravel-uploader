@@ -1,13 +1,13 @@
 
 	{!! Form::open(array('route' => 'chargeStripe', 'id' => 'stripeForm')) !!}
-	    <button id="stripeButton" class="btn btn-lg btn-block btn-primary">Pay with Stripe</button>
+	    <button id="stripeButton" class="btn btn-lg btn-block btn-primary bgm-teal">
+	    	<img src="http://i.imgur.com/SDlhREw.png" alt="Pay with Credit Card" style="height: 25px;"> Kreditkarte</button>
 	{!! Form::close() !!}
 
 
 	@section('footer')
 		@parent
 		<script src="https://checkout.stripe.com/checkout.js"></script>
-
 		<script>
 			var $form = $('#stripeForm');
 
@@ -38,17 +38,11 @@
 					@endif
 					allowRememberMe: false,
 				});
-
 				e.preventDefault();
 			});
-
 			// Close Checkout on page navigation
 			$(window).on('popstate', function() {
 				handler.close();
 			});
-
-			console.log('handler.key');
-
-		</script>
-		
+		</script>		
 	@endsection

@@ -28,13 +28,13 @@
 
 					<div class="col-sm-6">
 	                    <div class="row">
-	                    	<div class="col-sm-4">
+	                    	<div class="col-lg-4">
 								@include('pages.payments.partials.stripeButton')
 	                    	</div>
-	                    	<div class="col-sm-4">
+	                    	<div class="col-lg-4">
 
 	                    	</div>
-	                    	<div class="col-sm-4">
+	                    	<div class="col-lg-4">
 	                    		@include('pages.payments.partials.paypalButton')
 	                    	</div>
 	                    </div>
@@ -47,7 +47,6 @@
                     </div>
                 </div>				
             </div>
-
         </div>
 
 @endsection

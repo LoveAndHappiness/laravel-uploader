@@ -148,7 +148,8 @@ return [
 		'Laracasts\Flash\FlashServiceProvider',
 		'Zizaco\Entrust\EntrustServiceProvider',
 		'Jenssegers\Date\DateServiceProvider',
-		'Laravel\Cashier\CashierServiceProvider',
+		'Cartalyst\Stripe\Laravel\StripeServiceProvider',
+		'Laracasts\Generators\GeneratorsServiceProvider'
 
 	],
 
@@ -202,6 +203,7 @@ return [
 		'Flash' 	=> 'Laracasts\Flash\Flash',
 		'Entrust' 	=> 'Zizaco\Entrust\EntrustFacade',
 		'Date' 		=> 'Jenssegers\Date\Date',
+		'Stripe' 	=> 'Cartalyst\Stripe\Laravel\Facades\Stripe',	
 
 	],
 

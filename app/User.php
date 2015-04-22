@@ -6,14 +6,11 @@ use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Zizaco\Entrust\Traits\EntrustUserTrait;
-use Laravel\Cashier\Billable;
-use Laravel\Cashier\Contracts\Billable as BillableContract;
 
-class User extends Model implements AuthenticatableContract, CanResetPasswordContract, BillableContract {
+class User extends Model implements AuthenticatableContract, CanResetPasswordContract {
 
 	use Authenticatable, CanResetPassword;
 	use EntrustUserTrait;
-	use Billable;
 
 	/**
 	 * The database table used by the model.
@@ -21,7 +18,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 * @var string
 	 */
 	protected $table = 'users';
-	protected $dates = ['trial_ends_at', 'subscription_ends_at'];
 
 	/**
 	 * The attributes that are mass assignable.
