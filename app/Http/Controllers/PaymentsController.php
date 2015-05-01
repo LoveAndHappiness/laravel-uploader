@@ -53,10 +53,18 @@ class PaymentsController extends Controller {
 	 */
 	public function chargeStripe()
 	{
-
 		$stripe = new Stripe;
-		$stripe = Stripe::make('pk_test_mA3Wo4wGNDNEQ5rRHaUKTVOZ');
-		dd($stripe);
+		$stripe = Stripe::make(env('STRIPE_PUBLIC_KEY'));
+
+		$charge = $stripe->charges()->create([
+			'amount'   => 2900,
+			'customer' => Input::get('stripeEmail'),
+			'currency' => 'EUR',
+		]);
+
+		dd($charge);
+
+		// echo $charge[Input::get('stripeToken')];
 
 
 		return Redirect::route('step1');
